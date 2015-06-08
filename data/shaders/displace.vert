@@ -1,4 +1,5 @@
 uniform mat4 ModelMatrix;
+uniform vec3 windDir;
 
 #if __VERSION__ >= 330
 layout(location = 0) in vec3 Position;
@@ -15,8 +16,10 @@ out vec2 uv_bis;
 out float camdist;
 
 void main() {
-	gl_Position = ProjectionMatrix * ViewMatrix * ModelMatrix * vec4(Position, 1.);
+    vec3 dir = windDir;
+	gl_Position = ProjectionMatrix * ViewMatrix * ModelMatrix * vec4(Position + dir, 1.);
 	uv = Texcoord;
 	uv_bis = SecondTexcoord;
 	camdist = length(ViewMatrix * ModelMatrix *  vec4(Position, 1.));
+
 }

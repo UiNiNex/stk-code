@@ -246,6 +246,11 @@ public:
     {
         return m_dir2[1];
     }
+	
+	core::vector3df getWindDir() const
+	{
+		return core::vector3df(2.3, -1.0, 10.0);
+	}
 
 private:
     float m_screen[2];

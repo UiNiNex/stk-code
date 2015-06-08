@@ -469,19 +469,19 @@ public:
 };   // InstancedRefShadowShader
 
 // ============================================================================
-class DisplaceMaskShader : public Shader<DisplaceMaskShader, core::matrix4>
+class DisplaceMaskShader : public Shader<DisplaceMaskShader, core::matrix4, core::vector3df>
 {
 public:
     DisplaceMaskShader()
     {
         loadProgram(OBJECT, GL_VERTEX_SHADER, "displace.vert",
                             GL_FRAGMENT_SHADER, "white.frag");
-        assignUniforms("ModelMatrix");
+        assignUniforms("ModelMatrix", "windDir");
     }   // DisplaceMaskShader
 };   // DisplaceMaskShader
 
 // ============================================================================
-class DisplaceShader : public TextureShader<DisplaceShader, 4, core::matrix4,
+class DisplaceShader : public TextureShader<DisplaceShader, 4, core::matrix4, core::vector3df,
                                           core::vector2df, core::vector2df>
 {
 public:
@@ -489,7 +489,7 @@ public:
     {
         loadProgram(OBJECT, GL_VERTEX_SHADER, "displace.vert",
                             GL_FRAGMENT_SHADER, "displace.frag");
-        assignUniforms("ModelMatrix", "dir", "dir2");
+        assignUniforms("ModelMatrix", "windDir", "dir", "dir2");
 
         assignSamplerNames(0, "displacement_tex", ST_BILINEAR_FILTERED, 
                            1, "color_tex", ST_BILINEAR_FILTERED,
@@ -1604,7 +1604,7 @@ void IrrDriver::renderTransparent()
         size_t count = mesh.IndexCount;
 
         DisplaceMaskShader::getInstance()->use();
-        DisplaceMaskShader::getInstance()->setUniforms(AbsoluteTransformation);
+        DisplaceMaskShader::getInstance()->setUniforms(AbsoluteTransformation, core::vector3df(2.3, -1.0, 10.0));
         glDrawElementsBaseVertex(ptype, (int)count, itype,
                                  (GLvoid *)mesh.vaoOffset, (int)mesh.vaoBaseVertex);
     }
@@ -1634,6 +1634,7 @@ void IrrDriver::renderTransparent()
             getTextureGLuint(mesh.textures[0]));
         DisplaceShader::getInstance()->use();
         DisplaceShader::getInstance()->setUniforms(AbsoluteTransformation,
+			cb->getWindDir(),
             core::vector2df(cb->getDirX(), cb->getDirY()),
             core::vector2df(cb->getDir2X(), cb->getDir2Y()));
 
