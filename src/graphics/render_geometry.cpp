@@ -1604,7 +1604,7 @@ void IrrDriver::renderTransparent()
         size_t count = mesh.IndexCount;
 
         DisplaceMaskShader::getInstance()->use();
-        DisplaceMaskShader::getInstance()->setUniforms(AbsoluteTransformation, core::vector3df(2.3, -1.0, 10.0));
+        DisplaceMaskShader::getInstance()->setUniforms(AbsoluteTransformation, cb->getWindDir());
         glDrawElementsBaseVertex(ptype, (int)count, itype,
                                  (GLvoid *)mesh.vaoOffset, (int)mesh.vaoBaseVertex);
     }

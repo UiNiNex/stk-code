@@ -249,7 +249,10 @@ public:
 	
 	core::vector3df getWindDir() const
 	{
-		return core::vector3df(2.3, -1.0, 10.0);
+		const float time = irr_driver->getDevice()->getTimer()->getTime() / 1000.0f;
+		return (1 * cos(time) * vector3df(0., 1., 0.));
+	
+		//return core::vector3df(2.3, -1.0, 10.0);
 	}
 
 private:
