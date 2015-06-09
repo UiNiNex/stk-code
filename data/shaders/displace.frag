@@ -9,9 +9,17 @@ in vec2 uv;
 in vec2 uv_bis;
 in float camdist;
 
+in vec3 normalInterp;
+in vec3 vertPos;
+
 out vec4 FragColor;
 
 const float maxlen = 0.02;
+
+// TODO put these parameters in stk
+
+const vec3 lightPos = vec3(143.83, 732.16, 1358.93);
+const vec3 specColor = vec3(1.0, 1.0, 1.0);
 
 void main()
 {
@@ -43,5 +51,26 @@ void main()
     vec4 col = texture(color_tex, tc);
     vec4 blend_tex = texture(tex, uv);
     col.rgb = blend_tex.rgb * blend_tex.a + (1. - blend_tex.a) * col.rgb;
-    FragColor = vec4(col.rgb, 1.);
+    
+    /* Compute the light ----------------------- */
+
+    vec3 normal = normalize(normalInterp); 
+    vec3 lightDir = normalize(lightPos - vertPos);
+
+    float lambertian = max(dot(lightDir,normal), 0.0);
+    float specular = 0.0;
+    
+    if (lambertian > 0.0){
+        vec3 reflectDir = reflect(-lightDir, normal);
+        vec3 viewDir = normalize(-vertPos);
+
+        float specAngle = max(dot(reflectDir, viewDir), 0.0);
+        specular = pow(specAngle, 4.0);
+    }
+    
+    FragColor = vec4(normal, 1.);
+
+    //FragColor = vec4(col.rgb, 1.);
+    
+    FragColor = vec4( lambertian*col.rgb + specular*specColor, 1.0);
 }
