@@ -204,7 +204,8 @@ public:
 };   // InstancedRefShadowShader
 
 // ============================================================================
-class DisplaceMaskShader : public Shader<DisplaceMaskShader, core::matrix4>
+class DisplaceMaskShader : public Shader<DisplaceMaskShader, core::matrix4,
+                                         core::vector3df>
 {
 public:
     DisplaceMaskShader();
@@ -212,6 +213,7 @@ public:
 
 // ============================================================================
 class DisplaceShader : public TextureShader<DisplaceShader, 4, core::matrix4,
+                                            core::vector3df,
                                             core::vector2df, core::vector2df>
 {
 public:

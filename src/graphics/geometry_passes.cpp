@@ -347,7 +347,7 @@ void AbstractGeometryPasses::renderTransparent(const DrawCalls& draw_calls,
         size_t count = mesh.IndexCount;
 
         DisplaceMaskShader::getInstance()->use();
-        DisplaceMaskShader::getInstance()->setUniforms(AbsoluteTransformation);
+        DisplaceMaskShader::getInstance()->setUniforms(AbsoluteTransformation, irr_driver->getWaterWave());
         glDrawElementsBaseVertex(ptype, (int)count, itype,
                                  (GLvoid *)mesh.vaoOffset, (int)mesh.vaoBaseVertex);
     }
@@ -379,6 +379,7 @@ void AbstractGeometryPasses::renderTransparent(const DrawCalls& draw_calls,
             mesh.textures[0]->getOpenGLTextureName());
         DisplaceShader::getInstance()->use();
         DisplaceShader::getInstance()->setUniforms(AbsoluteTransformation,
+            irr_driver->getWaterWave(),
             core::vector2df(cb->getDirX(), cb->getDirY()),
             core::vector2df(cb->getDir2X(), cb->getDir2Y()));
 

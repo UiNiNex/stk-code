@@ -331,7 +331,7 @@ DisplaceMaskShader::DisplaceMaskShader()
 {
     loadProgram(OBJECT, GL_VERTEX_SHADER, "displace.vert",
                         GL_FRAGMENT_SHADER, "white.frag");
-    assignUniforms("ModelMatrix");
+    assignUniforms("ModelMatrix", "windDir");
 }   // DisplaceMaskShader
 
 // ============================================================================
@@ -339,7 +339,7 @@ DisplaceShader::DisplaceShader()
 {
     loadProgram(OBJECT, GL_VERTEX_SHADER, "displace.vert",
                         GL_FRAGMENT_SHADER, "displace.frag");
-    assignUniforms("ModelMatrix", "dir", "dir2");
+    assignUniforms("ModelMatrix", "windDir", "dir", "dir2");
     assignSamplerNames(0, "displacement_tex", ST_BILINEAR_FILTERED,
                        1, "color_tex", ST_BILINEAR_FILTERED,
                        2, "mask_tex", ST_BILINEAR_FILTERED,

@@ -2090,4 +2090,7 @@ GLuint IrrDriver::getDepthStencilTexture()
     return m_renderer->getDepthStencilTexture();
 }   // getDepthStencilTexture
 
-
+core::vector3df IrrDriver::getWaterWave(){
+    const float time = m_device->getTimer()->getTime() / 1000.0f;
+ 	return (1 * time * vector3df(0., 0.5, 0.));
+}

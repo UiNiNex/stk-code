@@ -334,6 +334,9 @@ public:
     // ------------------------------------------------------------------------
     inline core::vector3df getWind()  {return m_wind->getWind();}
 
+    // ------------------------------------------------------------------------
+    /** Used to generate water wave */
+    core::vector3df getWaterWave();
     // -----------------------------------------------------------------------
     /** Returns a pointer to the spherical harmonics coefficients. */
     inline const SHCoefficients* getSHCoefficients()  {return m_renderer->getSHCoefficients();}
