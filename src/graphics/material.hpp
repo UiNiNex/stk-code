@@ -248,6 +248,8 @@ private:
 
     std::string      m_alphablend_reflection;
 
+    std::string      m_alphablend_gloss;
+
     /** If m_splatting is true, indicates the first splatting texture */
     std::string      m_splatting_texture_1;
 

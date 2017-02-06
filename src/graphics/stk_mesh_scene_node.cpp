@@ -502,14 +502,16 @@ void STKMeshSceneNode::render()
                     if (CVS->isAZDOEnabled())
                     {
                         Shaders::TransparentFogShader::getInstance()
-                                    ->setTextureHandles(mesh.TextureHandles[0], mesh.TextureHandles[1]);
+                                    ->setTextureHandles(mesh.TextureHandles[0], mesh.TextureHandles[1],
+                                                        mesh.TextureHandles[2]);
                     }
                     else
 #endif
                     {
                         Shaders::TransparentFogShader::getInstance()
                             ->setTextureUnits(mesh.textures[0]->getOpenGLTextureName(),
-                                              mesh.textures[1]->getOpenGLTextureName());
+                                              mesh.textures[1]->getOpenGLTextureName(),
+                                              mesh.textures[2]->getOpenGLTextureName());
                     }
                     Shaders::TransparentFogShader::getInstance()
                            ->setUniforms(AbsoluteTransformation, mesh.texture_trans,

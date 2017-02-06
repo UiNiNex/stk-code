@@ -299,7 +299,8 @@ Shaders::TransparentFogShader::TransparentFogShader()
     assignUniforms("ModelMatrix", "texture_trans", "fogmax", "startH",
                    "endH", "start", "end", "col");
     assignSamplerNames(0, "tex", ST_TRILINEAR_ANISOTROPIC_FILTERED,
-                       1, "sphereMap", ST_TRILINEAR_ANISOTROPIC_FILTERED);
+                       1, "sphereMap", ST_TRILINEAR_ANISOTROPIC_FILTERED,
+                       2, "glossMap", ST_TRILINEAR_ANISOTROPIC_FILTERED);
 }   // TransparentFogShader
 
 // ============================================================================

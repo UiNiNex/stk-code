@@ -218,11 +218,11 @@ void AbstractGeometryPasses::renderTransparent(const DrawCalls& draw_calls,
         glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
         renderTransparenPass<Shaders::TransparentFogShader, video::EVT_STANDARD,
                              8, 7, 6, 5, 4, 3, 2, 1>(
-                             STK::Tuple<size_t, size_t>(0, 1), ListBlendTransparentFog::getInstance());
+                             STK::Tuple<size_t, size_t, size_t>(0, 1, 2), ListBlendTransparentFog::getInstance());
         glBlendFunc(GL_ONE, GL_ONE);
         renderTransparenPass<Shaders::TransparentFogShader,
                              video::EVT_STANDARD, 8, 7, 6, 5, 4, 3, 2, 1>(
-                             STK::Tuple<size_t, size_t>(0, 1), ListAdditiveTransparentFog::getInstance());
+                             STK::Tuple<size_t, size_t, size_t>(0, 1, 2), ListAdditiveTransparentFog::getInstance());
     }
     else
     {

@@ -476,6 +476,10 @@ void initTexturesTransparent(GLMesh &mesh)
     {
         mesh.textures[1] = STKTexManager::getInstance()->getUnicolorTexture(video::SColor(0, 0, 0, 0));
     }
+    if (!mesh.textures[2])
+    {
+        mesh.textures[2] = STKTexManager::getInstance()->getUnicolorTexture(video::SColor(255, 255, 255, 255));
+    }
 #if !defined(USE_GLES2)
     if (CVS->isAZDOEnabled())
     {
@@ -486,6 +490,10 @@ void initTexturesTransparent(GLMesh &mesh)
         if (!mesh.TextureHandles[1])
         {
             mesh.TextureHandles[1] = mesh.textures[1]->getHandle();
+        }
+        if (!mesh.TextureHandles[2])
+        {
+            mesh.TextureHandles[2] = mesh.textures[2]->getHandle();
         }
     }
 #endif
