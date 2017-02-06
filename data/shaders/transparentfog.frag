@@ -1,7 +1,9 @@
 #ifdef Use_Bindless_Texture
 layout(bindless_sampler) uniform sampler2D tex;
+layout(bindless_sampler) uniform sampler2D sphereMap;
 #else
 uniform sampler2D tex;
+uniform sampler2D sphereMap;
 #endif
 
 
@@ -22,7 +24,7 @@ out vec4 FragColor;
 
 void main()
 {
-    vec4 diffusecolor = texture(tex, uv);
+    vec4 diffusecolor = texture(sphereMap, uv);
 #ifdef Use_Bindless_Texture
 #ifdef SRGBBindlessFix
     diffusecolor.xyz = pow(diffusecolor.xyz, vec3(2.2));

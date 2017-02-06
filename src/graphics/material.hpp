@@ -247,6 +247,9 @@ private:
     std::string      m_colorization_mask;
 
     /** If m_splatting is true, indicates the first splatting texture */
+    std::string      m_alphablend_reflection;
+
+    /** If m_splatting is true, indicates the first splatting texture */
     std::string      m_splatting_texture_1;
 
     /** If m_splatting is true, indicates the second splatting texture */

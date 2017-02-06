@@ -187,6 +187,7 @@ Material::Material(const XMLNode *node, bool deprecated)
         else if (s == "alphablend")
         {
             m_shader_type = SHADERTYPE_ALPHA_BLEND;
+            node->get("splatting-texture-1", &m_alphablend_reflection);
         }
         else if (s == "spheremap")
         {
@@ -807,6 +808,12 @@ void  Material::setMaterialProperties(video::SMaterial *m, scene::IMeshBuffer* m
                 video::EBF_ONE_MINUS_SRC_ALPHA,
                 video::EMFN_MODULATE_1X,
                 video::EAS_TEXTURE | video::EAS_VERTEX_COLOR);
+            
+            tex = stm->getTexture(m_alphablend_reflection,
+                true/*srgb*/, false/*premul_alpha*/, false/*set_material*/,
+                true/*mesh_tex*/);
+            m->setTexture(1, tex);
+
             return;
         case SHADERTYPE_ADDITIVE:
             m->MaterialType = video::EMT_ONETEXTURE_BLEND;
