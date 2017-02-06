@@ -497,12 +497,10 @@ void STKMeshSceneNode::render()
                     video::SColorf col(tmpcol.getRed() / 255.0f,
                                        tmpcol.getGreen() / 255.0f,
                                        tmpcol.getBlue() / 255.0f);
-
+                    initTexturesTransparent(mesh);
 #if !defined(USE_GLES2)
                     if (CVS->isAZDOEnabled())
                     {
-                        if (!mesh.TextureHandles[0])
-                            mesh.TextureHandles[0] = mesh.textures[0]->getHandle();
                         Shaders::TransparentFogShader::getInstance()
                                     ->setTextureHandles(mesh.TextureHandles[0], mesh.TextureHandles[1]);
                     }
@@ -533,12 +531,10 @@ void STKMeshSceneNode::render()
                     GLenum ptype = mesh.PrimitiveType;
                     GLenum itype = mesh.IndexType;
                     size_t count = mesh.IndexCount;
-
+                    initTexturesTransparent(mesh);
 #if !defined(USE_GLES2)
                     if (CVS->isAZDOEnabled())
                     {
-                        if (!mesh.TextureHandles[0])
-                            mesh.TextureHandles[0] = mesh.textures[0]->getHandle();
                         Shaders::TransparentShader::getInstance()->setTextureHandles(mesh.TextureHandles[0]);
                     }
                     else
