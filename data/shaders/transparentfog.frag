@@ -14,8 +14,11 @@ uniform vec3 col;
 
 in vec2 uv;
 in vec4 color;
+in vec3 nor;
 out vec4 FragColor;
 
+#stk_include "utils/SpecularBRDF.frag"
+#stk_include "utils/SunMRP.frag"
 
 void main()
 {
@@ -39,6 +42,12 @@ void main()
 
     fog = min(fog, fogmax);
 
+    vec3 eyedir = -normalize(xpos.xyz);
+    vec3 Lightdir = SunMRP(nor, eyedir);
+
+    vec3 Specular = SpecularBRDF(nor, eyedir, Lightdir, vec3(1.), 1.0) * sun_col;
+
     vec4 finalcolor = vec4(col, 0.) * fog + diffusecolor *(1. - fog);
-    FragColor = vec4(finalcolor.rgb * finalcolor.a, finalcolor.a);
+    FragColor = vec4(finalcolor.rgb * finalcolor.a + Specular, finalcolor.a);
+    //FragColor = vec4(Specular * sun_col, 1.0);
 }
