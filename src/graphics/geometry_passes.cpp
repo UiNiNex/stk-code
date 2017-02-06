@@ -73,59 +73,6 @@ layout(location = 5) in vec3 Tangent;
 layout(location = 6) in vec3 Bitangent;
 */
 
-// ============================================================================
-namespace RenderGeometry
-{
-    struct TexUnit
-    {
-        GLuint m_id;
-        bool m_premul_alpha;
-
-        TexUnit(GLuint id, bool premul_alpha)
-        {
-            m_id = id;
-            m_premul_alpha = premul_alpha;
-        }
-    };   // struct TexUnit
-
-    // ------------------------------------------------------------------------
-    template <typename T>
-    std::vector<TexUnit> TexUnits(T curr) // required on older clang versions
-    {
-        std::vector<TexUnit> v;
-        v.push_back(curr);
-        return v;
-    }   // TexUnits
-
-    // ------------------------------------------------------------------------
-    // required on older clang versions
-    template <typename T, typename... R>
-    std::vector<TexUnit> TexUnits(T curr, R... rest)
-    {
-        std::vector<TexUnit> v;
-        v.push_back(curr);
-        VTexUnits(v, rest...);
-        return v;
-    }   // TexUnits
-
-    // ------------------------------------------------------------------------
-    // required on older clang versions
-    template <typename T, typename... R>
-    void VTexUnits(std::vector<TexUnit>& v, T curr, R... rest)
-    {
-        v.push_back(curr);
-        VTexUnits(v, rest...);
-    }   // VTexUnits
-    // ------------------------------------------------------------------------
-    template <typename T>
-    void VTexUnits(std::vector<TexUnit>& v, T curr)
-    {
-        v.push_back(curr);
-    }   // VTexUnits
-}   // namespace RenderGeometry
-
-using namespace RenderGeometry;
-
 #if !defined(USE_GLES2)
 // ----------------------------------------------------------------------------
 void AbstractGeometryPasses::prepareShadowRendering(const FrameBuffer& shadow_framebuffer) const
@@ -197,8 +144,8 @@ void AbstractGeometryPasses::setFirstPassRenderTargets(const std::vector<GLuint>
 
 // ----------------------------------------------------------------------------
 template<typename Shader, enum video::E_VERTEX_TYPE VertexType, int...List, 
-         typename... TupleType>
-void renderTransparenPass(const std::vector<RenderGeometry::TexUnit> &TexUnits, 
+         typename... TupleType, typename... Tex>
+void renderTransparenPass(const STK::Tuple<Tex...>& tex_units,
                           std::vector<STK::Tuple<TupleType...> > *meshes)
 {
     Shader::getInstance()->use();
@@ -220,12 +167,9 @@ void renderTransparenPass(const std::vector<RenderGeometry::TexUnit> &TexUnits,
         }
 
         if (CVS->isAZDOEnabled())
-            Shader::getInstance()->setTextureHandles(mesh.TextureHandles[0]);
+            HandleExpander<Shader>::template expand(mesh.TextureHandles, tex_units);
         else
-        {
-            Shader::getInstance()->setTextureUnits(mesh.textures[0]
-                ->getOpenGLTextureName());
-        }
+            TexExpander<Shader>::template expandTex(mesh, tex_units);
         CustomUnrollArgs<List...>::template drawMesh<Shader>(meshes->at(i));
     }
 }   // renderTransparenPass
@@ -249,21 +193,17 @@ void AbstractGeometryPasses::renderTransparent(const DrawCalls& draw_calls,
     if (CVS->supportsHardwareSkinning())
     {
         renderTransparenPass<Shaders::SkinnedTransparentShader, video::EVT_SKINNED_MESH, 4, 3, 2, 1>(
-                             TexUnits(RenderGeometry::TexUnit(0, true)),
-                                      ListTranslucentSkinned::getInstance());
+                             STK::Tuple<size_t>(0), ListTranslucentSkinned::getInstance());
     }
 
     renderTransparenPass<Shaders::TransparentShader, video::EVT_STANDARD, 3, 2, 1>(
-                         TexUnits(RenderGeometry::TexUnit(0, true)),
-                                  ListTranslucentStandard::getInstance());
+                         STK::Tuple<size_t>(0), ListTranslucentStandard::getInstance());
 
     renderTransparenPass<Shaders::TransparentShader, video::EVT_TANGENTS, 3, 2, 1>(
-                         TexUnits(RenderGeometry::TexUnit(0, true)),
-                                  ListTranslucentTangents::getInstance());
+                         STK::Tuple<size_t>(0), ListTranslucentTangents::getInstance());
 
     renderTransparenPass<Shaders::TransparentShader, video::EVT_2TCOORDS, 3, 2, 1>(
-                         TexUnits(RenderGeometry::TexUnit(0, true)),
-                                  ListTranslucent2TCoords::getInstance());
+                         STK::Tuple<size_t>(0), ListTranslucent2TCoords::getInstance());
 
     glDepthMask(GL_FALSE);
     glDisable(GL_CULL_FACE);
@@ -278,25 +218,21 @@ void AbstractGeometryPasses::renderTransparent(const DrawCalls& draw_calls,
         glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
         renderTransparenPass<Shaders::TransparentFogShader, video::EVT_STANDARD,
                              8, 7, 6, 5, 4, 3, 2, 1>(
-                             TexUnits(RenderGeometry::TexUnit(0, true)),
-                              ListBlendTransparentFog::getInstance());
+                             STK::Tuple<size_t, size_t>(0, 1), ListBlendTransparentFog::getInstance());
         glBlendFunc(GL_ONE, GL_ONE);
         renderTransparenPass<Shaders::TransparentFogShader,
                              video::EVT_STANDARD, 8, 7, 6, 5, 4, 3, 2, 1>(
-                             TexUnits(RenderGeometry::TexUnit(0, true)),
-                                       ListAdditiveTransparentFog::getInstance());
+                             STK::Tuple<size_t, size_t>(0, 1), ListAdditiveTransparentFog::getInstance());
     }
     else
     {
         glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
         renderTransparenPass<Shaders::TransparentShader,
                              video::EVT_STANDARD, 3, 2, 1>(
-                                  TexUnits(RenderGeometry::TexUnit(0, true)),
-                                           ListBlendTransparent::getInstance());
+                             STK::Tuple<size_t>(0), ListBlendTransparent::getInstance());
         glBlendFunc(GL_ONE, GL_ONE);
         renderTransparenPass<Shaders::TransparentShader, video::EVT_STANDARD, 3, 2, 1>(
-                             TexUnits(RenderGeometry::TexUnit(0, true)),
-                                      ListAdditiveTransparent::getInstance());
+                             STK::Tuple<size_t>(0), ListAdditiveTransparent::getInstance());
     }
 
     draw_calls.renderBillboardList();

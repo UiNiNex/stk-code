@@ -504,7 +504,7 @@ void STKMeshSceneNode::render()
                         if (!mesh.TextureHandles[0])
                             mesh.TextureHandles[0] = mesh.textures[0]->getHandle();
                         Shaders::TransparentFogShader::getInstance()
-                                    ->setTextureHandles(mesh.TextureHandles[0]);
+                                    ->setTextureHandles(mesh.TextureHandles[0], mesh.TextureHandles[1]);
                     }
                     else
 #endif
