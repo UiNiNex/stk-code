@@ -3,7 +3,7 @@
 * Battle mode AI by Benau
 * Soccer mode AI by Benau
 * New icy soccer field by samuncle and Benau
-* New subsea track by samuncle
+* New Abyss track by samuncle
 * New volcano track by Ponzino
 * TTF font rendering by Benau
 * Kart properties refactor by Flakebi
