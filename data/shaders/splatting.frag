@@ -28,7 +28,7 @@ void main() {
     vec4 detail2 = texture(tex_detail2, uv);
     vec4 detail3 = texture(tex_detail3, uv);
     vec4 detail4 = vec4(0.0);
-    vec4 plop = texture(tex_hf, uv);
+    vec4 hf_detail = texture(tex_hf, uv * 20);
 #ifdef Use_Bindless_Texture
 #ifdef SRGBBindlessFix
     detail0.xyz = pow(detail0.xyz, vec3(2.2));
@@ -43,7 +43,6 @@ void main() {
         splatting.b * detail2 +
         max(0., (1.0 - splatting.r - splatting.g - splatting.b)) * detail3;
 
-    //FragColor = vec4(getLightFactor(splatted.xyz, vec3(1.), 0., 0.), 1.);
-    FragColor = vec4(plop.rgb, 1.);
-    FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+    splatted.rgb = (splatted.rgb + hf_detail.rgb) - 0.5;
+    FragColor = vec4(getLightFactor(splatted.xyz, vec3(1.), 0., 0.), 1.);
 }
