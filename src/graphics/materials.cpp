@@ -840,10 +840,11 @@ const std::tuple<size_t> DetailMat::RSMTextures = std::tuple<size_t>(0);
 
 // ----------------------------------------------------------------------------
 const std::tuple<size_t> SplattingMat::FirstPassTextures
-    = std::tuple<size_t>(8);
+    = std::tuple<size_t>(7);
 const std::tuple<size_t, size_t, size_t, size_t, size_t, size_t>
     SplattingMat::SecondPassTextures
-    = std::tuple<size_t, size_t, size_t, size_t, size_t, size_t>(1, 3, 4, 5, 6, 7);
+    = std::tuple<size_t, size_t, size_t, size_t, size_t, size_t>
+                                                            (1, 3, 4, 5, 6, 2);
 std::tuple<> SplattingMat::ShadowTextures;
 const std::tuple<size_t, size_t, size_t, size_t, size_t>
     SplattingMat::RSMTextures

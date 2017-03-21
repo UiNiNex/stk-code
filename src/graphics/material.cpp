@@ -780,7 +780,7 @@ void  Material::setMaterialProperties(video::SMaterial *m, scene::IMeshBuffer* m
             glossytex = stm->STKTexManager::getInstance()->getUnicolorTexture(SColor(0, 0, 0, 0));
         }
 
-        if (!m->getTexture(2))
+        if (!m->getTexture(2) && m_shader_type != SHADERTYPE_SPLATTING)
         {
             // Only set colorization mask if not set
             ITexture *colorization_mask_tex =
@@ -865,17 +865,16 @@ void  Material::setMaterialProperties(video::SMaterial *m, scene::IMeshBuffer* m
             }
             m->setTexture(5, tex);
 
-			TexConfig s4tc(false/*srgb*/, false/*premul_alpha*/,
-				true/*mesh_tex*/, false/*set_material*/);
+            TexConfig s4tc(false/*srgb*/, false/*premul_alpha*/,
+                true/*mesh_tex*/, false/*set_material*/);
             if (m_splatting_texture_4.size() > 0)
             {
-                
                 tex = stm->getTexture(m_splatting_texture_4, &s4tc);
             }
             m->setTexture(6, tex);
             m->setTexture(7, glossytex);
             tex = stm->getTexture(m_hf_texture, &s4tc);
-			m->setTexture(8, tex);
+            m->setTexture(2, tex);
 
             // Material and shaders
             m->MaterialType = Shaders::getShader(ES_SPLATTING);
