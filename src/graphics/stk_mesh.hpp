@@ -49,7 +49,7 @@ struct GLMesh
     GLuint vao;
     GLuint vertex_buffer;
     GLuint index_buffer;
-    video::ITexture *textures[8];
+    video::ITexture *textures[16];
     GLenum PrimitiveType;
     GLenum IndexType;
     size_t IndexCount;
