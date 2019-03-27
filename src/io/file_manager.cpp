@@ -935,7 +935,7 @@ void FileManager::checkAndCreateConfigDir()
     std::string beta_config_dir = m_user_config_dir + "0.10-beta";
     m_user_config_dir += "config-0.10/";
 
-    if (fileExists(beta_config_dir))
+    if (fileExists(beta_config_dir) && !fileExists(m_user_config_dir))
     {
         Log::info("FileManager", "Rename 0.10-beta directory to config-0.10 "
             "to keep user story mode progress.");
