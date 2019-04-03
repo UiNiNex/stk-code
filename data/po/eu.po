@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: SuperTuxKart\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-25 10:28+0800\n"
-"PO-Revision-Date: 2019-03-12 19:50+0000\n"
-"Last-Translator: Benau\n"
+"PO-Revision-Date: 2019-04-03 07:47+0000\n"
+"Last-Translator: Txus Ordorika <txusinho@gmail.com>\n"
 "Language-Team: Basque (http://www.transifex.com/supertuxkart/supertuxkart/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,7 +74,7 @@ msgstr "Urrezko gidaria"
 msgid ""
 "Win against at least 3 AIs in normal race, time-trial, and follow the "
 "leader."
-msgstr ""
+msgstr "Behintzat 3 AAren aurka irabazi lasterketa normalean, erlojupekoan edota burua jarraitu moduetan"
 
 #. I18N: ./data/achievements.xml
 msgid "Powerup Love"
@@ -382,7 +382,7 @@ msgstr "Irudi-oinarriko argiak"
 #. I18N: ./data/gui/dialogs/custom_video_settings.stkgui
 #. I18N: Video settings
 msgid "Light Scattering"
-msgstr ""
+msgstr "Argi dispertsioa"
 
 #. I18N: ./data/gui/dialogs/custom_video_settings.stkgui
 #. I18N: Video settings
@@ -4440,7 +4440,7 @@ msgstr "Futbol jolas mota"
 #: src/states_screens/dialogs/server_info_dialog.cpp:100
 #, c-format
 msgid "Current track: %s"
-msgstr ""
+msgstr "Oraingo zirkuitua: %s"
 
 #: src/states_screens/dialogs/server_info_dialog.cpp:111
 #: src/states_screens/race_gui_overworld.cpp:151
@@ -4678,7 +4678,7 @@ msgstr "Erronka bete duzu!"
 
 #: src/states_screens/grand_prix_win.cpp:320
 msgid "You won the Grand Prix!"
-msgstr ""
+msgstr "Sari Nagusia irabazi duzu!"
 
 #: src/states_screens/grand_prix_win.cpp:321
 msgid "You completed the Grand Prix!"
@@ -4710,14 +4710,14 @@ msgstr ""
 msgid ""
 "You can not download addons without internet access. If you want to download"
 " addons, go in the options menu, and check \"Connect to the Internet\"."
-msgstr ""
+msgstr "Ezin dira gehigarriak jeitsi internet konekzio gabe. Gehigarririk jaitsi nahi izan ezkero, aukerak menura jo eta \"Internetera konektatu\" aukera hautatu."
 
 #: src/states_screens/main_menu_screen.cpp:515
 msgid ""
 "You can not download addons without internet access. If you want to download addons, go in the options menu, and check \"Connect to the Internet\".\n"
 "\n"
 "You can however delete already downloaded addons."
-msgstr ""
+msgstr "Ezin dira gehogarriak jeitsi internet konekzio gabe. Gehigarririk jaitsi nahi izan ezkero, aukerak menura jo eta \"Internetera konektatu\" aukera hautatu.\n\nDagoeneko jeitsitako gehigarriak ezaba ditzakezu hala ere."
 
 #: src/states_screens/main_menu_screen.cpp:550
 msgid "The add-ons module is currently disabled in the Options screen"
@@ -4765,7 +4765,7 @@ msgstr ""
 #. to join the current started in-progress game
 #: src/states_screens/online/networking_lobby.cpp:187
 msgid "Spectate"
-msgstr ""
+msgstr "Behatu"
 
 #: src/states_screens/online/networking_lobby.cpp:298
 #, c-format
@@ -4806,7 +4806,7 @@ msgstr ""
 #. wait before the current game finish
 #: src/states_screens/online/networking_lobby.cpp:355
 msgid "Please wait for the current game's end."
-msgstr ""
+msgstr "Itxaron mesedez oraingo jolasa amaitu arte"
 
 #: src/states_screens/online/networking_lobby.cpp:411
 #, c-format
@@ -4845,7 +4845,7 @@ msgstr "Gainontzeko denbora: %d"
 #. I18N: Goals in achievement
 #: src/states_screens/online/online_profile_achievements.cpp:82
 msgid "Goals"
-msgstr ""
+msgstr "Helburuak"
 
 #: src/states_screens/online/online_profile_achievements.cpp:115
 #: src/states_screens/online/online_profile_achievements.cpp:314
@@ -4908,7 +4908,7 @@ msgstr "Zerbitzari helbide baliogabea: %s."
 #. I18N: In enter server ip address dialog
 #: src/states_screens/online/online_screen.cpp:273
 msgid "Failed to detect port number."
-msgstr ""
+msgstr "Porrot portu zenbakia antzematerakoan"
 
 #: src/states_screens/online/online_user_search.cpp:210
 #: src/states_screens/online/online_user_search.cpp:274
@@ -5001,7 +5001,7 @@ msgstr "Zerbitzariak eskuratzen"
 msgid ""
 "If a majority of players all select the same track and race settings, voting"
 " will end early."
-msgstr ""
+msgstr "Jokalari gehiengo batek zirkuitu eta jolas aukera berdinak aukeratu ezkero, bozkaketa lehenago amaituko da"
 
 #. I18N: In track screen
 #. I18N: In the track info screen
@@ -5353,7 +5353,7 @@ msgstr "Besteei itxaroten"
 #. I18N: Shown waiting for the server in network if live join or specatate
 #: src/states_screens/race_gui_base.cpp:79
 msgid "Waiting for the server"
-msgstr ""
+msgstr "Zerbitzairiari itxaroten"
 
 #. I18N: string used to show the author of the music. (e.g. "Sunny Song" by
 #. "John Doe")

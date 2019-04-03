@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: SuperTuxKart\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-25 10:28+0800\n"
-"PO-Revision-Date: 2019-03-12 19:50+0000\n"
-"Last-Translator: Benau\n"
+"PO-Revision-Date: 2019-04-03 07:47+0000\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk (http://www.transifex.com/supertuxkart/supertuxkart/language/nn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,7 +56,7 @@ msgstr "Storsladdar"
 
 #. I18N: ./data/achievements.xml
 msgid "Skid 5 times in a single lap."
-msgstr "Sladd minst 5 gongar i same løp."
+msgstr "Sladd 5 gongar i same runde."
 
 #. I18N: ./data/achievements.xml
 msgid "Gold driver"
@@ -100,7 +100,7 @@ msgstr "Det er hemmeleg"
 
 #. I18N: ./data/achievements.xml
 msgid "Really ... a secret."
-msgstr "Verkeleg … ein løyndom."
+msgstr "Verkeleg … ein løyndom."
 
 #. I18N: ./data/achievements.xml
 msgid "Mosquito Hunter"
@@ -809,7 +809,7 @@ msgstr "Alle spelarane er klare"
 #. I18N: ./data/gui/dialogs/online/splitscreen_player_dialog.stkgui
 #. I18N: Splitscreen player in network
 msgid "Clear players"
-msgstr ""
+msgstr "Fjern spelarar"
 
 #. I18N: ./data/gui/dialogs/online/user_info_dialog.stkgui
 #. I18N: User info dialog' dialog
@@ -936,7 +936,7 @@ msgstr "Baner"
 #. I18N: ./data/gui/screens/arenas.stkgui
 #. I18N: Section in arena tracks selection screen
 msgid "Arenas"
-msgstr "Arenaer"
+msgstr "Arenaar"
 
 #. I18N: ./data/gui/screens/arenas.stkgui
 #. I18N: track group
@@ -1293,14 +1293,14 @@ msgid ""
 "help to take sharp turns; while medium skids will boost your speed, long "
 "skids more so. You can't stop turning while skidding, so orient your kart "
 "carefully before!"
-msgstr "Du kan sladda ved å halda inne ein eigen tast/knapp. Fleire stutte sladdingar hjelper deg å ta krappare svingar, mens lengre sladding gjev deg meir fart. Du kan ikkje slutta å svinga mens du sladdar, så pass på at køyretøyet peikar i rett retning før du startar å sladda."
+msgstr "Du kan sladda ved å halda inne ein eigen tast/knapp. Fleire stutte sladdingar hjelper deg å ta krappare svingar, mens lengre sladding gjev deg meir fart. Du kan ikkje slutta å svinga mens du sladdar, så pass på at køyretøyet peikar i rett retning før du startar sladdinga."
 
 #. I18N: ./data/gui/screens/help1.stkgui
 #. I18N: In the help menu
 msgid ""
 "You can get a startup boost by pressing the accelerate button at 'Set!', "
 "before the race's start."
-msgstr ""
+msgstr "Du kan auka startfarten ved å akselerera når nedteljinga til løpet viser «Ferdig!»."
 
 #. I18N: ./data/gui/screens/help1.stkgui
 #. I18N: in the help screen
@@ -1450,7 +1450,7 @@ msgstr "Bombe: Eksploderer etter ei kort stund – og blåser då køyretøyet 
 
 #. I18N: ./data/gui/screens/help5.stkgui
 msgid "The evil Nolok has captured Gnu! Here are a few tips to help you:"
-msgstr "Den onde Nolok har tatt Gnu til fange! Her har du nokre tips:"
+msgstr "Den vonde Nolok har teke Gnu til fange! Her har du nokre tips:"
 
 #. I18N: ./data/gui/screens/help5.stkgui
 #. I18N: In the help menu
@@ -1534,7 +1534,7 @@ msgid ""
 "options). Then, you can either create your own server with custom options, "
 "or search among a list of existing servers to join. Some of them are trusted"
 " servers with optionally ranked races."
-msgstr ""
+msgstr "Vel først «Over nettet» på hovudmenyen. Vel anten lokalnettverk eller Internett (Internett-tilgang må vera påslått i innstillingane). Du kan så oppretta din eigen tenar med innstillingane du føretrekkjer, eller velja ein tenar som andre har oppretta. Nokre av tenarane er spesielt tiltrudde, med rankinglister."
 
 #. I18N: ./data/gui/screens/help7.stkgui
 #. I18N: In the help menu
@@ -2086,7 +2086,7 @@ msgstr "Grafiske effektar"
 #. I18N: ./data/gui/screens/options_video.stkgui
 #. I18N: In the video settings
 msgid "Custom settings..."
-msgstr "Tilpassa innstillingar …"
+msgstr "Tilpassa innstillingar …"
 
 #. I18N: ./data/gui/screens/options_video.stkgui
 #. I18N: In the video settings
@@ -2278,7 +2278,7 @@ msgstr "Kampøya"
 
 #. I18N: ../stk-assets/tracks/black_forest/track.xml
 msgid "Black Forest"
-msgstr ""
+msgstr "Svartskogen"
 
 #. I18N: ../stk-assets/tracks/cave/track.xml
 msgid "Cave X"
@@ -2320,7 +2320,7 @@ msgstr "Kva er gale, små hippiar? Saknar de den store gnu-leiaren dykkar?"
 #. I18N: Cutscene subtitle from ../stk-assets/tracks/introcutscene2/scene.xml
 #. I18N: ../stk-assets/tracks/introcutscene2/scene.xml
 msgid "Oh yes, see, he's in my castle now and will be served for supper..."
-msgstr "Du skjønar, han er i slottet mitt no, og vert servert til kveldsmat …"
+msgstr "De skjønar, han er i slottet mitt no, og vert servert til kveldsmat …"
 
 #. I18N: Cutscene subtitle from ../stk-assets/tracks/introcutscene2/scene.xml
 #. I18N: ../stk-assets/tracks/introcutscene2/scene.xml
@@ -2330,7 +2330,7 @@ msgstr "Men eg er eit vennleg vesen, så me kan gjera ei avtale."
 #. I18N: Cutscene subtitle from ../stk-assets/tracks/introcutscene2/scene.xml
 #. I18N: ../stk-assets/tracks/introcutscene2/scene.xml
 msgid "If you can beat me at racing, I will free the old codger."
-msgstr "Viss du kan slå meg i kappløp, skal eg sleppa den gamle sulliken fri."
+msgstr "Viss de kan slå meg i kappløp, skal eg sleppa den gamle sulliken fri."
 
 #. I18N: Cutscene subtitle from ../stk-assets/tracks/introcutscene2/scene.xml
 #. I18N: ../stk-assets/tracks/introcutscene2/scene.xml
@@ -2369,7 +2369,7 @@ msgstr "Olivers mattetime"
 
 #. I18N: ../stk-assets/tracks/ravenbridge_mansion/track.xml
 msgid "Ravenbridge mansion"
-msgstr ""
+msgstr "Ramnkloppen herregard"
 
 #. I18N: ../stk-assets/tracks/sandtrack/track.xml
 msgid "Shifting Sands"
@@ -3246,7 +3246,7 @@ msgid ""
 "(To change this setting at a later time, go to options, select tab "
 "'General', and edit \"Connect to the Internet\" and \"Send anonymous HW "
 "statistics\")."
-msgstr ""
+msgstr "SuperTuxKart kan kopla til ein tenar for å lasta ned speltillegg og varsla deg om oppdateringar. Me samlar òg inn anonym maskinvarestatistikk til hjelp i utviklinga av spelet. Les meir om personvern på http://privacy.supertuxkart.net/. Ønskjer du å bruka denne funksjonaliteten? (For å endra dette seinare kan du gå til innstillingsvindauget, velja fana «Generelt» og kryssa av for «Kopla til Internett» og «Send anonym maskinvareinfo».)"
 
 #: src/main.cpp:2081
 msgid "Your screen resolution is too low to run STK."
@@ -3263,7 +3263,7 @@ msgid ""
 "Your graphics driver appears to be very old. Please check if an update is "
 "available. SuperTuxKart recommends a driver supporting %s or better. The "
 "game will likely still run, but in a reduced-graphics mode."
-msgstr ""
+msgstr "Skjermkortdrivaren din er veldig gammal. Sjå om det har komme ei drivaroppdatering. SuperTuxKart verkar best med ein drivar som støttar %s eller høgare. Spelet vil framleis køyra, men med redusert grafikkvalitet."
 
 #: src/main_loop.cpp:347 src/network/protocols/client_lobby.cpp:91
 msgid "Server connection timed out."
@@ -3506,7 +3506,7 @@ msgstr "%s vart med."
 msgid ""
 "Press <%s> or <%s> to change the targeted player or <%s> for the camera "
 "position."
-msgstr ""
+msgstr "Trykk <%s> eller <%s> for å byta målspelar, eller <%s> for å byta kameraplassering."
 
 #: src/network/protocols/connect_to_server.cpp:50
 msgid "No quick play server available."
@@ -3553,7 +3553,7 @@ msgstr "Offisiell"
 #. will optionally host a ranked matching game
 #: src/network/server.cpp:122
 msgid "Trusted"
-msgstr ""
+msgstr "Tiltrudd"
 
 #: src/online/online_player_profile.cpp:434
 #, c-format
@@ -3724,7 +3724,7 @@ msgstr "Tilfeldig arena"
 msgid "%d arena unavailable in single player."
 msgid_plural "%d arenas unavailable in single player."
 msgstr[0] "%d arena ikkje tilgjengeleg i éinspelarmodus."
-msgstr[1] "%d arenaer ikkje tilgjengelege i éinspelarmodus."
+msgstr[1] "%d arenaar ikkje tilgjengelege i éinspelarmodus."
 
 #: src/states_screens/credits.cpp:184
 msgid "translator-credits"
@@ -5561,7 +5561,7 @@ msgstr "Akselerer med <%s>, og styr med <%s> og <%s>."
 #, c-format
 msgid ""
 "Collect gift boxes, and fire the weapon with <%s> to blow away these boxes!"
-msgstr "Plukk opp gåver, og trykk så skyteknappen <%s> for å bli kvitt desse kassane!"
+msgstr "Plukk opp gåver, og trykk så skyteknappen <%s> for å vera kvitt desse kassane!"
 
 #: ../stk-assets/tracks/tutorial/scripting.as:43
 #: ../stk-assets/tracks/tutorial/triggers.as:44

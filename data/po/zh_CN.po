@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: SuperTuxKart\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-25 10:28+0800\n"
-"PO-Revision-Date: 2019-03-12 19:50+0000\n"
+"PO-Revision-Date: 2019-04-03 07:47+0000\n"
 "Last-Translator: 杜茂森 <dumaosen_main01@outlook.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/supertuxkart/supertuxkart/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -1480,7 +1480,7 @@ msgstr "完成一项挑战赛后，您会得到一个奖杯。 每个奖杯都�
 msgid ""
 "When you get the number of points indicated below this icon, you'll be "
 "gifted a surprise. There are several to collect."
-msgstr "当您看到这个图标下面指出的点数时，您会有一个惊喜。 有一些分数要收集。"
+msgstr "当您达到这个图标下面指示的点数时，一个大大的惊喜在等着你哦！"
 
 #. I18N: ./data/gui/screens/help6.stkgui
 msgid ""
@@ -1825,7 +1825,7 @@ msgid ""
 "You can play without creating an online account by selecting an offline "
 "account. Though then you can not connect to friends, vote for addons etc. "
 "Please read our privacy statement at http://privacy.supertuxkart.net"
-msgstr "您可以选取离线帐号以避免在要游玩时建立在线帐号。虽然这样您就无法与朋友连线，为附加组件投票等。请到 http://privacy.supertuxkart.net 详阅我们的隐私政策"
+msgstr "您可以选取离线帐号以避免在要游玩时建立在线帐号。虽然这样您就无法与朋友连线，为附加组件投票等。请到 http://privacy.supertuxkart.net 详阅我们的隐私政策。"
 
 #. I18N: ./data/gui/screens/online/server_selection.stkgui
 msgid "Server Selection"
@@ -4762,7 +4762,7 @@ msgstr "观赛"
 #: src/states_screens/online/networking_lobby.cpp:298
 #, c-format
 msgid "Lobby (ping: %dms)"
-msgstr "大堂（连接：%d毫秒）"
+msgstr "大堂（Ping: %d毫秒）"
 
 #. I18N: In the networking lobby, show when player is required to
 #. wait before the current game finish with remaining time,
